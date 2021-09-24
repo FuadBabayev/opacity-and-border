@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<img src="https://a.d-cd.net/ca9444es-960.jpg" width="400px">
+<img src="https://a.d-cd.net/db22faas-960.jpg" width="400px"> 
+<img src="https://avatars.mds.yandex.net/get-autoru-vos/1943086/7b24b3d2606f7ef8a498e732431648c6/1200x900n" width="400px"><br/><br/><br/>
+<input type="range" min="0" max="1"  step="0.01" id="opacity" onclick="opacity()">
+<label for="opacity">OPACITY</label> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+<input type="range" min="0" max="100" step="1" id="border" onclick="border()">
+<label for="opacity">BORDER-RADIUS</label>
+<script>
+function opacity(e){
+let opa = document.querySelector("#opacity").value;
+sessionStorage.setItem("opacity", opa);
+console.log(opa);
+}
+                                            function border(e){
+                                            let bor = document.getElementById("border").value;
+                                            sessionStorage.setItem("border", bor + "px");
+                                            console.log(bor);
+                                            }
+for(let i = 0; i < 3; i ++){
+document.getElementsByTagName("img")[i].style.opacity = sessionStorage.getItem("opacity");
+document.getElementsByTagName("img")[i].style.borderRadius = sessionStorage.getItem("border");
+}
+
+
+</script>
+</body>
+</html>
